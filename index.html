@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Barn Ranch - Fresh Organic Eggs in North Colorado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --barn-red: #c4463a;
+            --warm-stone: #d4b896;
+            --deep-sage: #6b7f5a;
+            --cream: #f7f3e9;
+            --charcoal: #3c4043;
+            --soft-white: #fefefe;
+            --accent-gold: #d4a574;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background-color: var(--cream);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(196, 70, 58, 0.08), rgba(212, 184, 150, 0.12));
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .logo {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-family: 'Georgia', serif;
+            letter-spacing: -2px;
+        }
+
+        .logo .red { color: var(--barn-red); }
+        .logo .barn { color: var(--accent-gold); }
+        .logo .ranch { color: var(--deep-sage); }
+
+        .tagline {
+            font-size: 1.6rem;
+            color: var(--deep-sage);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .faith-verse {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--barn-red), #b83d32);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(196, 70, 58, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 70, 58, 0.35);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            background: var(--soft-white);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--deep-sage);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--barn-red), var(--accent-gold));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, var(--cream), var(--soft-white));
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid var(--barn-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            color: var(--deep-sage);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+
+        .shares-counter {
+            background: linear-gradient(135deg, var(--barn-red), #b83d32);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .family-section {
+            background: linear-gradient(135deg, rgba(212, 184, 150, 0.15), rgba(107, 127, 90, 0.08));
+            padding: 50px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .family-section h3 {
+            font-size: 2.2rem;
+            color: var(--deep-sage);
+            margin-bottom: 25px;
+        }
+
+        .family-section p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .stewardship-quote {
+            background: rgba(196, 70, 58, 0.05);
+            border-left: 4px solid var(--barn-red);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--charcoal);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background-color: var(--soft-white);
+            margin: 3% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+
+        .close:hover {
+            color: var(--charcoal);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--warm-stone);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background-color: var(--soft-white);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--barn-red);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--deep-sage), #5a6f4f);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 100%;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 127, 90, 0.3);
+        }
+
+        .faq-section {
+            background-image: url('https://drive.google.com/uc?id=1H04F9qAQmND7v1S4RkXcw5HwTOuFcW87');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .faq-overlay {
+            background: rgba(247, 243, 233, 0.95);
+            padding: 60px 20px;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: var(--soft-white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, var(--cream), var(--soft-white));
+            padding: 25px;
+            font-size: 1.3rem;
+            color: var(--deep-sage);
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--warm-stone), var(--cream));
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            color: var(--barn-red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+
+        .faq-answer.active {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        .bottom-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(196, 70, 58, 0.08), rgba(212, 184, 150, 0.12));
+        }
+
+        .footer {
+            background: var(--deep-sage);
+            color: var(--soft-white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="logo">
+                    <span class="red">Red</span> <span class="barn">Barn</span> <span class="ranch">Ranch</span>
+                </h1>
+                <p class="tagline">Fresh, Organic, Free-Range Eggs from Our Family to Yours</p>
+                <p class="faith-verse">"And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it..." - Genesis 1:28</p>
+                <p class="hero-description">Located in beautiful North Colorado, we're passionate about providing the highest quality eggs from happy, healthy chickens roaming our 20-acre pasture. Our family farm is our way of stewarding God's creation with care and purpose.</p>
+                <button class="cta-button" onclick="openSignupModal()">Join Our Egg Share Program</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://drive.google.com/uc?id=1GJzccr84dQrbACutm1u4cxPpRvoOSk1Y" alt="The Szczecina family in front of their red barn with dogs Rosie and Liberty">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <h2>What Makes Our Eggs Special</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🌾 Truly Organic</h3>
+                    <p>Our chickens enjoy certified organic, non-soy, non-GMO feed grown right here in Nebraska. We believe in nurturing God's creatures with the purest nutrition possible.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🐓 Free-Range Living</h3>
+                    <p>Our hens roam freely across our 20-acre pasture in a rotational grazing system. We move our home-built mobile chicken coop regularly, ensuring fresh grass and natural foraging while maintaining healthy pasture - the way God intended.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🥚 Farm-Fresh Quality</h3>
+                    <p>Eggs are clean but unwashed, preserving their natural protective coating so they stay fresh on your counter for weeks. We honor the natural design of these perfect packages.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📦 Weekly Egg Shares</h3>
+                    <p>We offer weekly egg shares - approximately 1 dozen eggs per week. Each share ensures you receive the freshest eggs while supporting sustainable, faith-based farming.</p>
+                </div>
+            </div>
+
+            <div class="shares-counter">
+                <div id="availableShares">Loading available shares...</div>
+            </div>
+
+            <div class="family-section">
+                <h3>Meet the Szczecina Family</h3>
+                <p>Hi! We're Steve and Laura Szczecina, along with our six kids: Adam, Ben, Josh, Jonah, Isaiah, and Daniel. We've called Northern Colorado home for over 20 years and love sharing our passion for sustainable farming with our community.</p>
+                <p>Adam, Ben, and Josh are our main chicken caretakers - they handle the daily care of our hens and gather every egg by hand with pride. Our livestock guardian dogs, Rosie and Liberty, keep our flock safe from hawks, coyotes, and other predators.</p>
+                <div class="stewardship-quote">
+                    <p>"We believe our family farm is part of fulfilling God's calling to be fruitful, multiply, and take dominion over the earth. Every day we work to be faithful stewards of the land, animals, and community He's entrusted to our care. It's not just about farming - it's about stewarding His creation with love, integrity, and purpose."</p>
+                </div>
+                <p>We believe in doing things the right way, even if it's not the easy way. Every egg represents our commitment to quality, sustainability, and treating our animals with the respect they deserve as part of God's creation.</p>
+            </div>
+
+            <h2>Pickup Locations</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🏡 On-Farm Pickup</h3>
+                    <p>Visit us at our ranch near Wellington, Colorado. Experience the source of your eggs firsthand and meet our feathered friends!</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🏪 Fort Collins Pickup</h3>
+                    <p>Every Thursday in Fort Collins, Colorado. Perfect for busy schedules - we bring the farm to you.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>⛪ Windsor Church Pickup</h3>
+                    <p>Sunday mornings at Windsor Christian Fellowship in Windsor. Convenient for our church family and neighbors who share our faith.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-overlay">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How much do egg shares cost?</div>
+                    <div class="faq-answer">Our eggs are $7 per dozen. This price reflects the high quality and purity of our eggs, covers our organic feed costs, and provides fair compensation for our boys' hard work in caring for the hens and preparing your eggs.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I pay for my egg share?</div>
+                    <div class="faq-answer">We run our egg shares like a monthly subscription. We accept payment by check, cash, or Venmo, and ask that you pay monthly for your convenience and ours.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">What if I go on vacation or don't need eggs one week?</div>
+                    <div class="faq-answer">Our hens keep laying eggs even when you're away! We're happy to hold your eggs for a week if you're out of town. For longer trips, we'd love it if you could find a friend or neighbor to enjoy your share - it's a great way to introduce others to farm-fresh eggs!</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How long do unwashed eggs stay fresh?</div>
+                    <div class="faq-answer">Unwashed eggs with their natural protective coating can stay fresh on your counter for 2-3 weeks, or in the refrigerator for up to 2 months. The natural bloom keeps them fresher longer than store-bought eggs.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">What breeds of chickens do you raise?</div>
+                    <div class="faq-answer">Our diverse flock includes ISA Browns, Amberlinks, Rustic Rocks, Midnight Marans, Prairie Bluebells, Cream Legbars, Buff Orpingtons, Rhode Island Reds, Ameraucanas, and Lavender Wyandottes. We have three roosters: Eggman and Doof (Ameraucanas) and Bart (Black Copper Marans). We even have one egg-laying turkey whose large speckled eggs may occasionally appear in your weekly share if you're lucky!</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">Can we visit the farm?</div>
+                    <div class="faq-answer">We love sharing our ranch with egg share members! Please reach out to arrange a visit - we'd be happy to show you around, introduce you to our flock, and share more about our farming practices and faith journey.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">What are the exact pickup times and locations?</div>
+                    <div class="faq-answer">Specific pickup times and locations will be confirmed when you join our program. We'll provide detailed information for Fort Collins Thursday pickups, Windsor Sunday morning pickups, and on-farm visits.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How far in advance do I need to commit to a share?</div>
+                    <div class="faq-answer">We're flexible! We can discuss arrangements that work for your family, whether you want to try it for a month or commit to a full season. We believe in building lasting relationships with our customers and community.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-cta">
+        <h2 style="margin-bottom:20px;">Ready to Experience Farm-Fresh Eggs?</h2>
+        <button class="cta-button" onclick="openSignupModal()">Get Your Weekly Egg Share</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Red Barn Ranch</h4>
+                <p>Steve & Laura Szczecina</p>
+                <p>Wellington, Colorado</p>
+                <p>Northern Colorado</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Phone: (970) XXX-XXXX</p>
+                <p>Email: info@redbarnranch.com</p>
+                <p>Or fill out our signup form above</p>
+            </div>
+            <div class="footer-section">
+                <h4>Pickup Locations</h4>
+                <p>On-Farm: Wellington, CO</p>
+                <p>Thursdays: Fort Collins, CO</p>
+                <p>Sundays: Windsor Christian Fellowship</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Red Barn Ranch. Faithfully stewarding God's creation, one egg at a time.</p>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Join Our Egg Share Program</h2>
+            <p style="margin-bottom: 30px; color: var(--deep-sage); font-size: 1.1rem;">We're excited to share our farm-fresh eggs with you! Please fill out the form below and we'll be in touch soon.</p>
+            
+            <form id="eggShareForm" action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="hidden_iframe">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="entry.FIRST_NAME_ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="entry.LAST_NAME_ID" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="entry.EMAIL_ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="entry.PHONE_ID" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dozensPerWeek">Dozens Per Week *</label>
+                        <select id="dozensPerWeek" name="entry.DOZENS_ID" required>
+                            <option value="">Choose...</option>
+                            <option value="1">1 dozen</option>
+                            <option value="2">2 dozen</option>
+                            <option value="3">3 dozen</option>
+                            <option value="4">4+ dozen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickupLocation">Preferred Pickup Location *</label>
+                        <select id="pickupLocation" name="entry.PICKUP_ID" required>
+                            <option value="">Choose...</option>
+                            <option value="farm">Farm (Wellington, CO)</option>
+                            <option value="fort-collins">Fort Collins (Thursdays)</option>
+                            <option value="windsor-church">Windsor Church (Sunday mornings)</option>
+                            <option value="flexible">Any location works</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="frequency">Delivery Frequency *</label>
+                    <select id="frequency" name="entry.FREQUENCY_ID" required>
+                        <option value="">Choose...</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="bi-weekly">Bi-weekly (every other week)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Questions or Comments</label>
+                    <textarea id="comments" name="entry.COMMENTS_ID" rows="4" placeholder="Tell us anything else you'd like us to know..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Request Egg Share Information</button>
+            </form>
+            
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {document.getElementById('signupModal').style.display='none'; alert('Thank you! We\'ll be in touch soon about your egg share.');}"></iframe>
+        </div>
+    </div>
+
+    <script>
+        let submitted = false;
+
+        function openSignupModal() {
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('signupModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('eggShareForm').addEventListener('submit', function() {
+            submitted = true;
+        });
+
+        // FAQ Accordion functionality
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                ans.classList.remove('active');
+            });
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                answer.classList.add('active');
+                element.classList.add('active');
+            }
+        }
+
+        // Function to update available shares count
+        function updateAvailableShares() {
+            // This would connect to your Google Sheets to get the current count
+            // For now, displaying a placeholder - you'll need to implement the actual connection
+            const sharesElement = document.getElementById('availableShares');
+            sharesElement.innerHTML = '🥚 <strong>15 Shares Currently Available</strong> - Reserve yours today!';
+            
+            // You can replace this with actual Google Sheets API integration
+            // Example: fetch data from your sheet and update the number dynamically
+        }
+
+        // Load available shares on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateAvailableShares();
+        });
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
