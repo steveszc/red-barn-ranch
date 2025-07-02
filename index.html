@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Barn Ranch - Fresh Organic Eggs in North Colorado</title>
+    <title>Red Barn Ranch - Fresh Organic Eggs in Northern Colorado</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐓</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coustard&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -48,17 +55,17 @@
         }
 
         .logo {
-            font-size: 4.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            /* font-family: 'Georgia', serif; */
             letter-spacing: -2px;
         }
 
         .logo .red { color: var(--barn-red); }
-        .logo .barn { color: var(--accent-gold); }
-        .logo .ranch { color: var(--deep-sage); }
+        .logo .barn { color: var(--barn-red); }
+        .logo .ranch { color: var(--barn-red); }
 
         .tagline {
             font-size: 1.6rem;
@@ -68,11 +75,14 @@
         }
 
         .faith-verse {
+            background-color: var(--deep-sage);
             font-size: 1.1rem;
-            color: var(--charcoal);
+            color: var(--cream);
             font-style: italic;
             margin-bottom: 30px;
             opacity: 0.8;
+            padding: 1rem 4rem;
+            text-align: center;
         }
 
         .hero-description {
@@ -96,11 +106,11 @@
             background: linear-gradient(135deg, var(--barn-red), #b83d32);
             color: white;
             padding: 20px 40px;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             border: none;
             border-radius: 12px;
             cursor: pointer;
-            font-family: inherit;
+            font-family: sans-serif;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(196, 70, 58, 0.25);
             text-transform: uppercase;
@@ -316,6 +326,10 @@
             position: relative;
         }
 
+        .faq-title {
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+        }
+
         .faq-overlay {
             background: rgba(247, 243, 233, 0);
             padding: 60px 20px;
@@ -418,6 +432,19 @@
             opacity: 0.8;
         }
 
+        .coustard-regular {
+            font-family: "Coustard", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .montserrat-400 {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -463,13 +490,12 @@
     <div class="hero-section">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="logo">
+                <h1 class="logo coustard-regular">
                     <span class="red">Red</span> <span class="barn">Barn</span> <span class="ranch">Ranch</span>
                 </h1>
-                <p class="tagline">Fresh, Organic, Free-Range Eggs from Our Family to Yours</p>
-                <p class="faith-verse">"And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it..." - Genesis 1:28</p>
-                <p class="hero-description">Located in beautiful North Colorado, we're passionate about providing the highest quality eggs from happy, healthy chickens roaming our 20-acre pasture. Our family farm is our way of stewarding God's creation with care and purpose.</p>
-                <button class="cta-button" onclick="openSignupModal()">Join Our Egg Share Program</button>
+                <p class="tagline"> 🥚 Fresh, Organic, Pastured Eggs<br /> from Our Family to Yours</p>
+                <p class="hero-description">Located in beautiful Northern Colorado, we're passionate about providing the highest quality eggs from happy, healthy chickens roaming our 20-acre pasture. Our family farm is our way of stewarding God's creation with care and purpose.</p>
+                <button class="cta-button montserrat-400" onclick="openSignupModal()">Join Our Egg Share Program</button>
             </div>
             <div class="hero-image">
                 <img src="public/family-portrait.jpeg" alt="The Szczecina family in front of their red barn with dogs Rosie and Liberty">
@@ -477,60 +503,64 @@
         </div>
     </div>
 
+    <div class="verse">
+        <p class="faith-verse">"And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it..." - Genesis 1:28</p>
+    </div>
+
     <div class="container">
         <div class="main-content">
-            <h2>What Makes Our Eggs Special</h2>
+            <h2 class="montserrat-400">What Makes Our Eggs Special</h2>
             
             <div class="features">
                 <div class="feature">
                     <h3>🌾 Truly Organic</h3>
-                    <p>Our chickens enjoy certified organic, non-soy, non-GMO feed grown right here in Nebraska. We believe in nurturing God's creatures with the purest nutrition possible.</p>
+                    <p>Our chickens enjoy certified organic, non-soy, non-GMO feed from Fehringer Feeds in Nebraska. We believe in nurturing God's creatures with the purest nutrition possible and keeping them free from adulturants like antibiotics, vaccines, or hormones.</p>
                 </div>
                 
                 <div class="feature">
                     <h3>🐓 Free-Range Living</h3>
-                    <p>Our hens roam freely across our 20-acre pasture in a rotational grazing system. We move our home-built mobile chicken coop regularly, ensuring fresh grass and natural foraging while maintaining healthy pasture - the way God intended.</p>
+                    <p>Our hens roam freely across our 20-acre pasture in a rotational grazing system. We move our home-built mobile chicken coop regularly, ensuring fresh grass and natural foraging while maintaining healthy pasture - the way God intended. Its the best life a chicken could ask for.</p>
                 </div>
                 
                 <div class="feature">
                     <h3>🥚 Farm-Fresh Quality</h3>
-                    <p>Eggs are clean but unwashed, preserving their natural protective coating so they stay fresh on your counter for weeks. We honor the natural design of these perfect packages.</p>
+                    <p>Our eggs are clean thanks to our rollout nest boxes, but unwashed which preserving their natural protective "bloom" so they stay fresh on your counter for weeks. We honor the natural design of these perfect packages.</p>
                 </div>
                 
                 <div class="feature">
                     <h3>📦 Weekly Egg Shares</h3>
-                    <p>We offer weekly egg shares - approximately 1 dozen eggs per week. Each share ensures you receive the freshest eggs while supporting sustainable, faith-based farming.</p>
+                    <p>We sell our eggs using an egg share model, kind of like a subscription. Each share ensures you receive the freshest eggs while supporting sustainable, humane, family farming.</p>
                 </div>
             </div>
 
-            <div class="shares-counter">
+            <button class="cta-button montserrat-400" onclick="openSignupModal()">
                 <div id="availableShares">Loading available shares...</div>
             </div>
 
             <div class="family-section">
-                <h3>Meet the Szczecina Family</h3>
-                <p>Hi! We're Steve and Laura Szczecina, along with our six kids: Adam, Ben, Josh, Jonah, Isaiah, and Daniel. We've called Northern Colorado home for over 20 years and love sharing our passion for sustainable farming with our community.</p>
-                <p>Adam, Ben, and Josh are our main chicken caretakers - they handle the daily care of our hens and gather every egg by hand with pride. Our livestock guardian dogs, Rosie and Liberty, keep our flock safe from hawks, coyotes, and other predators.</p>
+                <h3 class="montserrat-400">Meet the Szczecina Family</h3>
+                <p>Hi! We're Steve and Laura Szczecina, along with our six (yes, six!) boys: Adam, Ben, Josh, Jonah, Isaiah, and Daniel. We've called Northern Colorado home for over 20 years and love sharing our passion for sustainable farming with our community.</p>
+                <p>Adam, Ben, and Josh are our main chicken caretakers - they handle the daily care of our hens and gather every egg by hand. Our livestock guardian dogs, Rosie and Liberty, keep our flock safe from hawks, coyotes, and other predators, along with our roosters Bart, Eggman, and Doof.</p>
                 <div class="stewardship-quote">
-                    <p>"We believe our family farm is part of fulfilling God's calling to be fruitful, multiply, and take dominion over the earth. Every day we work to be faithful stewards of the land, animals, and community He's entrusted to our care. It's not just about farming - it's about stewarding His creation with love, integrity, and purpose."</p>
+                    <p>"We believe our family farm is part of fulfilling God's calling to be fruitful, multiply, and take dominion over the earth. Every day we work to be faithful stewards of the land, animals, and community He's entrusted to our care."</p>
                 </div>
                 <p>We believe in doing things the right way, even if it's not the easy way. Every egg represents our commitment to quality, sustainability, and treating our animals with the respect they deserve as part of God's creation.</p>
             </div>
 
-            <h2>Pickup Locations</h2>
+            <h2 class="montserrat-400">Pickup Locations</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>🏡 On-Farm Pickup</h3>
-                    <p>Visit us at our ranch near Wellington, Colorado. Experience the source of your eggs firsthand and meet our feathered friends!</p>
+                    <h3>On-Farm Pickup</h3>
+                    <p>Visit us at our ranch east of Wellington, Colorado. Experience the source of your eggs firsthand and meet our feathered friends!</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>🏪 Fort Collins - Thursdays</h3>
-                    <p>Every Thursday in Fort Collins, Colorado. Perfect for busy schedules - we bring the farm to you.</p>
+                    <h3>Fort Collins</h3>
+                    <p>Every Thursday afternoon in Fort Collins, Colorado at Olive Tree Homeschool program (at Summitview Church). Perfect for Olive Tree families - we bring the farm to you.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>⛪ Windsor - Sundays</h3>
+                    <h3>Windsor</h3>
                     <p>Sunday mornings at Windsor Christian Fellowship in Windsor. Convenient for our church family and neighbors who share our faith.</p>
                 </div>
             </div>
@@ -540,21 +570,21 @@
     <div class="faq-section">
         <div class="faq-overlay">
             <div class="faq-container">
-                <h2>Frequently Asked Questions</h2>
+                <h2 class="faq-title montserrat-400">Frequently Asked Questions</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">How much do egg shares cost?</div>
-                    <div class="faq-answer">Our eggs are $7 per dozen. This price reflects the high quality and purity of our eggs, covers our organic feed costs, and provides fair compensation for our boys' hard work in caring for the hens and preparing your eggs.</div>
+                    <div class="faq-answer">Our eggs shares are $7.50 per dozen. This price reflects the high quality and purity of our eggs, covers our organic feed costs, delivery costs, and provides fair compensation for our boys' hard work in caring for the hens and preparing your eggs. Shares are priced on a dozen-per-week basis, so $30 for a 1-dozen-per-week share or $60 for a 2-dozen-per-week-share.</div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">How do I pay for my egg share?</div>
-                    <div class="faq-answer">We run our egg shares like a monthly subscription. We accept payment by check, cash, or Venmo, and ask that you pay monthly for your convenience and ours. We'll also happily accept payment for a whole season upfront.</div>
+                    <div class="faq-answer">We run our egg shares like a monthly (or annual) subscription. We accept payment by check, cash, or Venmo, and ask that you pay monthly for your convenience and ours. We'll also happily accept payment for a whole season upfront.</div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">Will I get eggs year round?</div>
-                    <div class="faq-answer">During the winter months when there are fewer hours of daylight egg laying tends to drop off by as much as 50%. You can expect to receive fewer eggs during fall and winter than you will during spring and summer.</div>
+                    <div class="faq-answer">During the winter months when there are fewer hours of daylight egg laying tends to drop off by as much as 50%. During this time we'll priorize our share members to make sure they're receiving their full share as best we can, but there are just fewer eggs being laid during this time.</div>
                 </div>
                 
                 <div class="faq-item">
@@ -583,16 +613,16 @@
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">How far in advance do I need to commit to a share?</div>
-                    <div class="faq-answer">We're flexible! We can discuss arrangements that work for your family, whether you want to try it for a month or commit to a full season. We believe in building lasting relationships with our customers and community.</div>
+                    <div class="faq-question" onclick="toggleFAQ(this)">How far in advance do I need to commit to a share or cancel?</div>
+                    <div class="faq-answer">We're flexible! We can discuss arrangements that work for your family, whether you want to try it for a month or commit to a full year. We believe in building lasting relationships with our customers and community. We do have a limited number of shares available, once their sold out we won't have more eggs. If you need to cancel your share please give us as much notice as you can so we can find a new home for your eggs.</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bottom-cta">
+    <div class="bottom-cta montserrat-400">
         <h2 style="margin-bottom:20px;">Ready to Experience Farm-Fresh Eggs?</h2>
-        <button class="cta-button" onclick="openSignupModal()">Get Your Weekly Egg Share</button>
+        <button class="cta-button montserrat-400" onclick="openSignupModal()">Get Your Weekly Egg Share</button>
     </div>
 
     <footer class="footer">
@@ -605,15 +635,9 @@
             </div>
             <div class="footer-section">
                 <h4>Contact Us</h4>
-                <p>Phone: (970) 581-8003</p>
+                <p>Call or Text: (970) 581-8003</p>
                 <p>Email: steveszc@gmail.com</p>
                 <p>Or fill out our signup form above</p>
-            </div>
-            <div class="footer-section">
-                <h4>Pickup Locations</h4>
-                <p>On-Farm: Nunn, CO</p>
-                <p>Thursdays: Fort Collins, CO</p>
-                <p>Sundays: Windsor Christian Fellowship</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -625,69 +649,61 @@
     <div id="signupModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeSignupModal()">&times;</span>
-            <h2>Join Our Egg Share Program</h2>
+            <h2 class="montserrat-400">Join Our Egg Share Program</h2>
             <p style="margin-bottom: 30px; color: var(--deep-sage); font-size: 1.1rem;">We're excited to share our farm-fresh eggs with you! Please fill out the form below and we'll be in touch soon.</p>
             
-            <form id="eggShareForm" action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="POST" target="hidden_iframe">
+            <form id="eggShareForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdwYZ0PqQqt5ttOEn7f7s6SJEzk1BR1vTygxJsnYPVVuZQUug/formResponse" method="POST" target="hidden_iframe">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="entry.FIRST_NAME_ID" required>
+                        <label for="firstName" class="montserrat-400">First Name *</label>
+                        <input type="text" id="firstName" name="entry.570883417" required>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="entry.LAST_NAME_ID" required>
+                        <label for="lastName" class="montserrat-400">Last Name *</label>
+                        <input type="text" id="lastName" name="entry.415131649" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="entry.EMAIL_ID" required>
+                    <label for="email" class="montserrat-400">Email Address *</label>
+                    <input type="email" id="email" name="entry.1826738929" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="entry.PHONE_ID" required>
+                    <label for="phone" class="montserrat-400">Phone Number *</label>
+                    <input type="tel" id="phone" name="entry.1600152591" required>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="dozensPerWeek">Dozens Per Week *</label>
-                        <select id="dozensPerWeek" name="entry.DOZENS_ID" required>
+                        <label for="dozensPerWeek" class="montserrat-400">Dozens Per Week *</label>
+                        <select id="dozensPerWeek" name="entry.1067853770" required>
                             <option value="">Choose...</option>
                             <option value="1">1 dozen</option>
                             <option value="2">2 dozen</option>
                             <option value="3">3 dozen</option>
-                            <option value="4">4+ dozen</option>
+                            <option value="4">4 dozen</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="pickupLocation">Preferred Pickup Location *</label>
-                        <select id="pickupLocation" name="entry.PICKUP_ID" required>
+                        <label for="pickupLocation" class="montserrat-400">Preferred Pickup Location *</label>
+                        <select id="pickupLocation" name="entry.1509464012" required>
                             <option value="">Choose...</option>
-                            <option value="farm">Farm (Wellington, CO)</option>
-                            <option value="fort-collins">Fort Collins (Thursdays)</option>
-                            <option value="windsor-church">Windsor Church (Sunday mornings)</option>
-                            <option value="flexible">Any location works</option>
+                            <option value="farm">Farm (Anytime in Wellington, CO)</option>
+                            <option value="fort-collins">Fort Collins (Thursdays @ Olive Tree/Summitview Church during the school year)</option>
+                            <option value="windsor-church">Windsor (Sunday mornings @ Windsor Christian Fellowship)</option>
                         </select>
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="frequency">Delivery Frequency *</label>
-                    <select id="frequency" name="entry.FREQUENCY_ID" required>
-                        <option value="">Choose...</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="bi-weekly">Bi-weekly (every other week)</option>
-                    </select>
+                    <label for="comments" class="montserrat-400">Questions or Comments</label>
+                    <textarea id="comments" name="entry.793856997" rows="4" placeholder="Tell us anything else you'd like us to know..."></textarea>
                 </div>
+
+                <input type="text" name="submissionTimestamp" id="submissionTimestamp" value="" style="display:none;">
                 
-                <div class="form-group">
-                    <label for="comments">Questions or Comments</label>
-                    <textarea id="comments" name="entry.COMMENTS_ID" rows="4" placeholder="Tell us anything else you'd like us to know..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Request Egg Share Information</button>
+                <button type="submit" class="submit-button montserrat-400">Sign up</button>
             </form>
             
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {document.getElementById('signupModal').style.display='none'; alert('Thank you! We\'ll be in touch soon about your egg share.');}"></iframe>
@@ -715,6 +731,7 @@
 
         // Handle form submission
         document.getElementById('eggShareForm').addEventListener('submit', function() {
+            document.getElementById('submissionTimestamp').value = Date.now();
             submitted = true;
         });
 
